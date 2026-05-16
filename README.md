@@ -30,19 +30,9 @@
 
 | STT | MSSV | Họ và Tên | Chức Vụ | Github | Email |
 | :---: | :---: | :--- | :---: | :--- | :--- |
-<<<<<<< HEAD
 | 1 | **23520245** | **Dương Phúc Đạt** | Thành viên | [@phucdat6525-netizen](https://github.com/phucdat6525-netizen) | 23520245@gm.uit.edu.vn |
-=======
-<<<<<<< HEAD
-| 1 | **23520245** | **Dương Phúc Đạt** | Thành viên | [@phucdat6525-netizen](https://github.com/phucdat6525-netizen) | 23520245@gm.uit.edu.vn |
-| 2 | | | Thành viên | | @gm.uit.edu.vn |
-| 3 | | | Thành viên | | @gm.uit.edu.vn |
-=======
-| 1 | **23520245** | **Dương Phúc Đạt** | Nhóm trưởng | [@phucdat6525-netizen](https://github.com/phucdat6525-netizen) | 23520245@gm.uit.edu.vn |
->>>>>>> 7c31edee20f2709faba9f793f15cb1c2ee8e057c
 | 2 | **23520245** | **Nguyễn Minh Hùng** | Thành viên | [@Art3m1sHun](https://github.com/Art3m1sHun)| 232520568@gm.uit.edu.vn |
 | 3 | **23520845** | **Lê Xuân Song Lĩnh**| Thành viên | [@Linh5126](https://github.com/Linh5126)| 23520845@gm.uit.edu.vn |
->>>>>>> 28bb974bc83633bb9ecab163311577b32f957adb
 | 4 | | | Thành viên | | @gm.uit.edu.vn |
 | 5 | | | Thành viên | | @gm.uit.edu.vn |
 
@@ -68,14 +58,7 @@
 ---
 
 ##  HÌNH ẢNH MINH HỌA
-*(Sau khi làm xong giao diện, hãy chụp ảnh màn hình dashboard hoặc form chính và chèn vào đây)*
 
 <p align="center">
   <img src="https://via.placeholder.com/800x450.png?text=Giao+dien+phan+mem+chua+cap+nhat" alt="Giao diện phần mềm" width="800">
 </p>
-<<<<<<< HEAD
-
-<<<<<<< HEAD
-
-=======
->>>>>>> 7c31edee20f2709faba9f793f15cb1c2ee8e057c
