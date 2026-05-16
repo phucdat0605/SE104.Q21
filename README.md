@@ -31,8 +31,8 @@
 | STT | MSSV | Họ và Tên | Chức Vụ | Github | Email |
 | :---: | :---: | :--- | :---: | :--- | :--- |
 | 1 | **23520245** | **Dương Phúc Đạt** | Thành viên | [@phucdat6525-netizen](https://github.com/phucdat6525-netizen) | 23520245@gm.uit.edu.vn |
-| 2 | | | Thành viên | | @gm.uit.edu.vn |
-| 3 | | | Thành viên | | @gm.uit.edu.vn |
+| 2 | **23520245** | **Nguyễn Minh Hùng** | Thành viên | [@Art3m1sHun](https://github.com/Art3m1sHun)| 232520568@gm.uit.edu.vn |
+| 3 | **23520845** | **Lê Xuân Song Lĩnh**| Thành viên | [@Linh5126](https://github.com/Linh5126)| 23520845@gm.uit.edu.vn |
 | 4 | | | Thành viên | | @gm.uit.edu.vn |
 | 5 | | | Thành viên | | @gm.uit.edu.vn |
 
@@ -63,3 +63,5 @@
 <p align="center">
   <img src="https://via.placeholder.com/800x450.png?text=Giao+dien+phan+mem+chua+cap+nhat" alt="Giao diện phần mềm" width="800">
 </p>
+
+
