@@ -1,7 +1,7 @@
 <!-- Banner -->
 <p align="center">
   <a href="https://www.uit.edu.vn/" title="Trường Đại học Công nghệ Thông tin" style="border: none;">
-    <img src="https://img.vietnamfinance.vn/upload/news/thuonghieu/2021/6/17/logo-uit.png" alt="Trường Đại học Công nghệ Thông tin | University of Information Technology" width="150">
+    <img src="https://i.postimg.cc/tRN4KsPT/UIT20-02.png" alt="Trường Đại học Công nghệ Thông tin | University of Information Technology" width="150">
   </a>
 </p>
 
@@ -14,23 +14,23 @@
 
 ---
 
-## 📌 TỔNG QUAN ĐỀ TÀI
+##  TỔNG QUAN ĐỀ TÀI
 * **Đề tài:** Phần mềm quản lý thư viện sách
 * **Mô tả ngắn:** Hệ thống hỗ trợ quản lý mượn/trả sách, lưu trữ thông tin độc giả, sách, tác giả và tự động tính toán tiền phạt, lập báo cáo thống kê định kỳ nhằm tối ưu hóa quy trình vận hành của thư viện truyền thống.
 
-## 🏫 THÔNG TIN MÔN HỌC
+##  THÔNG TIN MÔN HỌC
 * **Tên môn học:** Nhập môn Công nghệ Phần mềm
 * **Mã môn học:** SE104
 * **Mã lớp:** SE104.Q21
-* **Giảng viên hướng dẫn:** Cô Đỗ Thị Thanh Tuyền
+* **Giảng viên hướng dẫn:** Đỗ Thị Thanh Tuyền
 
 ---
 
-## 👥 THÀNH VIÊN NHÓM
+##  THÀNH VIÊN NHÓM
 
 | STT | MSSV | Họ và Tên | Chức Vụ | Github | Email |
 | :---: | :---: | :--- | :---: | :--- | :--- |
-| 1 | **23520245** | **Dương Phúc Đạt** | Nhóm trưởng | [@phucdat6525-netizen](https://github.com/phucdat6525-netizen) | 23520245@gm.uit.edu.vn |
+| 1 | **23520245** | **Dương Phúc Đạt** | Thành viên | [@phucdat6525-netizen](https://github.com/phucdat6525-netizen) | 23520245@gm.uit.edu.vn |
 | 2 | | | Thành viên | | @gm.uit.edu.vn |
 | 3 | | | Thành viên | | @gm.uit.edu.vn |
 | 4 | | | Thành viên | | @gm.uit.edu.vn |
@@ -38,8 +38,7 @@
 
 ---
 
-## 🛠️ CÔNG NGHỆ SỬ DỤNG
-*(Phần này bạn có thể thay đổi bằng các icon công nghệ thực tế mà nhóm bạn chọn làm, ví dụ: WPF, WinForms, MySQL, SQL Server...)*
+##  CÔNG NGHỆ SỬ DỤNG
 
 <p align="left">
   <a href="https://docs.microsoft.com/en-us/dotnet/csharp/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg" alt="csharp" width="40" height="40"/> </a> 
@@ -49,7 +48,7 @@
 
 ---
 
-## 🚀 TÍNH NĂNG CHÍNH
+##  TÍNH NĂNG CHÍNH
 - [ ] **Quản lý Sách:** Tiếp nhận sách mới, tra cứu sách.
 - [ ] **Quản lý Độc giả:** Lập thẻ độc giả, phân loại loại độc giả.
 - [ ] **Quản lý Mượn/Trả:** Lập phiếu mượn sách, thu tiền phạt khi trả trễ hạn.
@@ -58,23 +57,9 @@
 
 ---
 
-## 📸 HÌNH ẢNH MINH HỌA
+##  HÌNH ẢNH MINH HỌA
 *(Sau khi làm xong giao diện, hãy chụp ảnh màn hình dashboard hoặc form chính và chèn vào đây)*
 
 <p align="center">
   <img src="https://via.placeholder.com/800x450.png?text=Giao+dien+phan+mem+chua+cap+nhat" alt="Giao diện phần mềm" width="800">
 </p>
-
----
-
-## 📦 HƯỚNG DẪN CÀI ĐẶT
-1. **Yêu cầu hệ thống:** .NET SDK / SQL Server (Tùy theo cấu hình thực tế).
-2. **Cài đặt Database:** Chạy file script `database.sql` trong thư mục `/database`.
-3. **Chạy ứng dụng:**
-   ```bash
-   # Clone dự án về máy
-   git clone [https://github.com/phucdat6525-netizen/](https://github.com/phucdat6525-netizen/)[ten-repo].git
-   
-   # Di chuyển vào thư mục code và chạy dự án
-   cd [ten-thu-muc]
-   dotnet run
