@@ -42,9 +42,9 @@
 
 <p align="left">
   <a href="https://docs.microsoft.com/en-us/dotnet/csharp/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg" alt="csharp" width="40" height="40"/> </a> 
-  <a href="https://postimg.cc/NyDjbChw/9f45a64c" target="_blank" rel="noreferrer"> <img src="https://toppng.com/free-image/sql-server-logo-PNG-free-PNG-Images_34203" alt="mssql" width="40" height="40"/> </a>
+  <a href="https://www.sqlservertutorial.net/" target="_blank" rel="noreferrer"> <img src="https://i.postimg.cc/gJFLz1Nr/toppng-com-sql-server-logo-1807x450.png" alt="mssql" width="40" height="40"/> </a>
   <a href="https://github.com/phucdat6525-netizen/SE104.Q21" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a>
-  <a href="https://postimg.cc/DWP8HyX9/08014a8f" target="_blank" rel="noreferrer"> <img src="https://www.cleanpng.com/png-trello-logo-for-productivity-8402705/" alt="git" width="40" height="40"/> </a>
+  <a href="https://trello.com/b/WUjLdHzo" target="_blank" rel="noreferrer"> <img src="https://i.postimg.cc/8zbTJ9pq/Trello-Logo-2011-768x432.png" alt="git" width="40" height="40"/> </a>
 </p>
 
 ---
