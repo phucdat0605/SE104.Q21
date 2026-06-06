@@ -20,7 +20,7 @@
 
 ##  THÔNG TIN MÔN HỌC
 * **Tên môn học:** Nhập môn Công nghệ Phần mềm
-* **Mã môn học:** SE104
+* **Nhóm thực hiện:** Nhóm 5
 * **Mã lớp:** SE104.Q21
 * **Giảng viên hướng dẫn:** Đỗ Thị Thanh Tuyền
 
