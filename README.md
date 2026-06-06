@@ -1,7 +1,7 @@
 <!-- Banner -->
 <p align="center">
   <a href="https://www.uit.edu.vn/" title="Trường Đại học Công nghệ Thông tin" style="border: none;">
-    <img src="https://postimg.cc/PNNHZrSs" alt="Trường Đại học Công nghệ Thông tin | University of Information Technology" width="150">
+    <img src="https://postimg.cc/PNNHZrSs/UIT20 02" alt="Trường Đại học Công nghệ Thông tin | University of Information Technology" width="150">
   </a>
 </p>
 
