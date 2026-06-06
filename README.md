@@ -30,7 +30,7 @@
 
 | STT | MSSV | Họ và Tên | Chức Vụ | Github | Email |
 | :---: | :---: | :--- | :---: | :--- | :--- |
-| 1 | **23520245** | **Dương Phúc Đạt** | Thành viên | [@phucdat6525-netizen](https://github.com/phucdat0605) | 23520245@gm.uit.edu.vn |
+| 1 | **23520245** | **Dương Phúc Đạt** | Thành viên | [@phucdat6525](https://github.com/phucdat0605) | 23520245@gm.uit.edu.vn |
 | 2 | **23520245** | **Nguyễn Minh Hùng** | Thành viên | [@Art3m1sHun](https://github.com/Art3m1sHun)| 232520568@gm.uit.edu.vn |
 | 3 | **23520845** | **Lê Xuân Song Lĩnh**| Thành viên | [@Linh5126](https://github.com/Linh5126)| 23520845@gm.uit.edu.vn |
 | 4 | **23520253**|**Ngô Hữu Đạt** | Thành viên |[@Ngo-Dat](https://github.com/Ngo-Dat) | 23520253@gm.uit.edu.vn |
