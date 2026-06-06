@@ -1,0 +1,434 @@
+using System;
+using System.Data;
+using System.Drawing;
+using System.Windows.Forms;
+using QuanLyThuVien.BUS;
+using QuanLyThuVien.DTO;
+
+namespace QuanLyThuVien.GUI
+{
+    public class FormQuanLySach : Form
+    {
+        private readonly SachBUS sachBUS = new SachBUS();
+        private Label lblTieuDe;
+        private Label lblMoTa;
+        private Label lblMaSach;
+        private Label lblTenSach;
+        private Label lblTheLoai;
+        private Label lblTacGia;
+        private Label lblNamXB;
+        private Label lblNhaXB;
+        private Label lblNgayNhap;
+        private Label lblTriGia;
+        private Label lblTacGiaDaChon;
+        private TextBox txtMaSach;
+        private TextBox txtTenSach;
+        private ComboBox cboTheLoai;
+        private TextBox txtTacGia;
+        private TextBox txtNamXB;
+        private TextBox txtNhaXB;
+        private DateTimePicker dtpNgayNhap;
+        private TextBox txtTriGia;
+        private DataGridView dgvSach;
+        private Button btnTiepNhan;
+        private Button btnXoa;
+        private Button btnTaiLai;
+        private Button btnDong;
+
+        public FormQuanLySach()
+        {
+            TaoGiaoDien();
+            Load += FormQuanLySach_Load;
+        }
+
+        private void TaoGiaoDien()
+        {
+            Text = "Tiếp nhận sách mới";
+            StartPosition = FormStartPosition.CenterScreen;
+            ClientSize = new Size(1420, 840);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            BackColor = Color.FromArgb(244, 247, 251);
+            Font = new Font("Segoe UI", 11F);
+
+            lblTieuDe = new Label();
+            lblTieuDe.Text = "Tiếp nhận sách mới";
+            lblTieuDe.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
+            lblTieuDe.ForeColor = Color.FromArgb(28, 77, 125);
+            lblTieuDe.AutoSize = true;
+            lblTieuDe.Location = new Point(34, 22);
+
+            lblMoTa = new Label();
+            lblMoTa.Text = "Quản lý thông tin sách, thể loại, tác giả, ngày nhập và số lượng hiện có trong thư viện.";
+            lblMoTa.ForeColor = Color.FromArgb(102, 117, 132);
+            lblMoTa.Font = new Font("Segoe UI", 10.5F);
+            lblMoTa.AutoSize = true;
+            lblMoTa.Location = new Point(38, 62);
+
+            lblMaSach = TaoLabel("Mã sách", 40, 110);
+            lblTenSach = TaoLabel("Tên sách", 40, 110);
+            lblTheLoai = TaoLabel("Thể loại", 400, 110);
+            lblTacGia = TaoLabel("Tác giả", 880, 110);
+            lblNamXB = TaoLabel("Năm xuất bản", 40, 180);
+            lblNhaXB = TaoLabel("Nhà xuất bản", 400, 180);
+            lblNgayNhap = TaoLabel("Ngày nhập", 880, 180);
+            lblTriGia = TaoLabel("Trị giá", 40, 250);
+            lblTacGiaDaChon = TaoLabel("Nhập một hoặc nhiều tác giả, cách nhau bằng dấu phẩy.", 880, 166);
+            lblTacGiaDaChon.ForeColor = Color.FromArgb(102, 117, 132);
+            lblTacGiaDaChon.Font = new Font("Segoe UI", 9.25F);
+
+            txtMaSach = TaoTextBox(40, 136, 130);
+            txtTenSach = TaoTextBox(40, 136, 300);
+
+            cboTheLoai = new ComboBox();
+            cboTheLoai.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboTheLoai.Location = new Point(400, 136);
+            cboTheLoai.Size = new Size(300, 26);
+
+            txtTacGia = TaoTextBox(880, 136, 400);
+
+            txtNamXB = TaoTextBox(40, 206, 300);
+            txtNhaXB = TaoTextBox(400, 206, 300);
+
+            dtpNgayNhap = new DateTimePicker();
+            dtpNgayNhap.Format = DateTimePickerFormat.Short;
+            dtpNgayNhap.Location = new Point(880, 206);
+            dtpNgayNhap.Size = new Size(400, 26);
+            dtpNgayNhap.Value = DateTime.Today;
+
+            txtTriGia = TaoTextBox(40, 276, 300);
+
+            btnXoa = TaoButton("Xóa", 870, 282, Color.FromArgb(190, 49, 68), Color.White);
+            btnTiepNhan = TaoButton("Tiếp nhận", 990, 282, Color.FromArgb(28, 77, 125), Color.White);
+            btnTaiLai = TaoButton("Tải lại", 1110, 282, Color.FromArgb(230, 235, 241), Color.FromArgb(50, 60, 70));
+            btnDong = TaoButton("Đóng", 1230, 282, Color.FromArgb(230, 235, 241), Color.FromArgb(50, 60, 70));
+
+            btnXoa.Click += btnXoa_Click;
+            btnTiepNhan.Click += btnTiepNhan_Click;
+            btnTaiLai.Click += btnTaiLai_Click;
+            btnDong.Click += (sender, e) => Close();
+
+            dgvSach = new DataGridView();
+            dgvSach.Location = new Point(28, 354);
+            dgvSach.Size = new Size(1364, 466);
+            dgvSach.ReadOnly = true;
+            dgvSach.AllowUserToAddRows = false;
+            dgvSach.AllowUserToDeleteRows = false;
+            dgvSach.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvSach.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvSach.BackgroundColor = Color.White;
+            dgvSach.BorderStyle = BorderStyle.None;
+            dgvSach.RowHeadersVisible = false;
+            dgvSach.EnableHeadersVisualStyles = false;
+            dgvSach.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(237, 242, 247);
+            dgvSach.ColumnHeadersDefaultCellStyle.ForeColor = Color.FromArgb(36, 52, 71);
+            dgvSach.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            dgvSach.ColumnHeadersHeight = 46;
+            dgvSach.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dgvSach.DefaultCellStyle.SelectionBackColor = Color.FromArgb(220, 232, 246);
+            dgvSach.DefaultCellStyle.SelectionForeColor = Color.FromArgb(36, 52, 71);
+            dgvSach.DefaultCellStyle.Padding = new Padding(2, 4, 2, 4);
+            dgvSach.RowTemplate.Height = 40;
+
+            ApDungBoCucNhapMaSach();
+
+            Controls.Add(lblTieuDe);
+            Controls.Add(lblMoTa);
+            Controls.Add(lblMaSach);
+            Controls.Add(lblTenSach);
+            Controls.Add(lblTheLoai);
+            Controls.Add(lblTacGia);
+            Controls.Add(lblNamXB);
+            Controls.Add(lblNhaXB);
+            Controls.Add(lblNgayNhap);
+            Controls.Add(lblTriGia);
+            Controls.Add(lblTacGiaDaChon);
+            Controls.Add(txtMaSach);
+            Controls.Add(txtTenSach);
+            Controls.Add(cboTheLoai);
+            Controls.Add(txtTacGia);
+            Controls.Add(txtNamXB);
+            Controls.Add(txtNhaXB);
+            Controls.Add(dtpNgayNhap);
+            Controls.Add(txtTriGia);
+            Controls.Add(btnXoa);
+            Controls.Add(btnTiepNhan);
+            Controls.Add(btnTaiLai);
+            Controls.Add(btnDong);
+            Controls.Add(dgvSach);
+        }
+
+        private void ApDungBoCucNhapMaSach()
+        {
+            lblMaSach.Location = new Point(40, 110);
+            txtMaSach.Location = new Point(40, 136);
+            txtMaSach.Size = new Size(130, 30);
+
+            lblTenSach.Location = new Point(190, 110);
+            txtTenSach.Location = new Point(190, 136);
+            txtTenSach.Size = new Size(310, 30);
+
+            lblTheLoai.Location = new Point(530, 110);
+            cboTheLoai.Location = new Point(530, 136);
+            cboTheLoai.Size = new Size(300, 26);
+
+            lblTacGia.Location = new Point(880, 110);
+            txtTacGia.Location = new Point(880, 136);
+        }
+
+        private Label TaoLabel(string text, int x, int y)
+        {
+            Label label = new Label();
+            label.Text = text;
+            label.AutoSize = true;
+            label.Location = new Point(x, y);
+            return label;
+        }
+
+        private TextBox TaoTextBox(int x, int y, int width)
+        {
+            TextBox textBox = new TextBox();
+            textBox.Location = new Point(x, y);
+            textBox.Size = new Size(width, 30);
+            return textBox;
+        }
+
+        private Button TaoButton(string text, int x, int y, Color backColor, Color foreColor)
+        {
+            Button button = new Button();
+            button.Text = text;
+            button.Size = new Size(108, 40);
+            button.Location = new Point(x, y);
+            button.BackColor = backColor;
+            button.ForeColor = foreColor;
+            button.FlatStyle = FlatStyle.Flat;
+            button.FlatAppearance.BorderSize = 0;
+            button.Font = new Font("Segoe UI", 10.5F, FontStyle.Bold);
+            return button;
+        }
+
+        private void FormQuanLySach_Load(object sender, EventArgs e)
+        {
+            TaiDuLieu();
+        }
+
+        private void btnTiepNhan_Click(object sender, EventArgs e)
+        {
+            int maSach = 0;
+            int namXB;
+            decimal triGia;
+
+            if (!string.IsNullOrWhiteSpace(txtMaSach.Text) &&
+                (!int.TryParse(txtMaSach.Text.Trim(), out maSach) || maSach <= 0))
+            {
+                MessageBox.Show("Mã sách không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtMaSach.Focus();
+                return;
+            }
+
+            if (!int.TryParse(txtNamXB.Text.Trim(), out namXB))
+            {
+                MessageBox.Show("Năm xuất bản không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtNamXB.Focus();
+                return;
+            }
+
+            if (!decimal.TryParse(txtTriGia.Text.Trim(), out triGia))
+            {
+                MessageBox.Show("Trị giá không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtTriGia.Focus();
+                return;
+            }
+
+            DataRowView theLoai = cboTheLoai.SelectedItem as DataRowView;
+            string tenTacGia = ChuanHoaDanhSachTacGia(txtTacGia.Text);
+
+            if (theLoai == null)
+            {
+                MessageBox.Show("Vui lòng chọn thể loại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(tenTacGia))
+            {
+                MessageBox.Show("Vui lòng nhập ít nhất một tác giả.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtTacGia.Focus();
+                return;
+            }
+
+            SachDTO sach = new SachDTO
+            {
+                MaSach = maSach,
+                TenSach = txtTenSach.Text.Trim(),
+                ChuDe = theLoai["TenTheLoai"].ToString(),
+                MaTheLoai = Convert.ToInt32(theLoai["MaTheLoai"]),
+                TenTG = tenTacGia,
+                MaTacGia = null,
+                NamXB = namXB,
+                NhaXB = txtNhaXB.Text.Trim(),
+                NgayNhap = dtpNgayNhap.Value.Date,
+                TriGia = triGia,
+                SoLuongTon = 1
+            };
+
+            string thongBao;
+            bool thanhCong = sachBUS.ThemSach(sach, out thongBao);
+
+            MessageBox.Show(
+                thongBao,
+                thanhCong ? "Thông báo" : "Lỗi",
+                MessageBoxButtons.OK,
+                thanhCong ? MessageBoxIcon.Information : MessageBoxIcon.Warning);
+
+            if (thanhCong)
+            {
+                LamMoiNhapLieu();
+                TaiDanhSachSach();
+            }
+        }
+
+        private void btnTaiLai_Click(object sender, EventArgs e)
+        {
+            LamMoiNhapLieu();
+            TaiDuLieu();
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            if (dgvSach.CurrentRow == null || dgvSach.CurrentRow.IsNewRow)
+            {
+                MessageBox.Show("Vui lòng chọn sách cần xóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            object maSachValue = dgvSach.CurrentRow.Cells["MaSach"].Value;
+            if (maSachValue == null || maSachValue == DBNull.Value)
+            {
+                MessageBox.Show("Không xác định được mã sách cần xóa.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            int maSach = Convert.ToInt32(maSachValue);
+            string tenSach = dgvSach.CurrentRow.Cells["TenSach"].Value == null
+                ? string.Empty
+                : dgvSach.CurrentRow.Cells["TenSach"].Value.ToString();
+
+            DialogResult result = MessageBox.Show(
+                "Bạn có chắc muốn xóa sách \"" + tenSach + "\"?",
+                "Xác nhận xóa",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (result != DialogResult.Yes)
+            {
+                return;
+            }
+
+            string thongBao;
+            bool thanhCong = sachBUS.XoaSach(maSach, out thongBao);
+
+            MessageBox.Show(
+                thongBao,
+                thanhCong ? "Thông báo" : "Lỗi",
+                MessageBoxButtons.OK,
+                thanhCong ? MessageBoxIcon.Information : MessageBoxIcon.Warning);
+
+            if (thanhCong)
+            {
+                TaiDanhSachSach();
+            }
+        }
+
+        private void TaiDuLieu()
+        {
+            cboTheLoai.DataSource = sachBUS.LayDanhSachTheLoai();
+            cboTheLoai.DisplayMember = "TenTheLoai";
+            cboTheLoai.ValueMember = "MaTheLoai";
+
+            TaiDanhSachSach();
+        }
+
+        private void LamMoiNhapLieu()
+        {
+            txtMaSach.Clear();
+            txtTenSach.Clear();
+            if (cboTheLoai.Items.Count > 0) cboTheLoai.SelectedIndex = 0;
+            txtTacGia.Clear();
+            txtNamXB.Clear();
+            txtNhaXB.Clear();
+            dtpNgayNhap.Value = DateTime.Today;
+            txtTriGia.Clear();
+            txtMaSach.Focus();
+        }
+
+        private string ChuanHoaDanhSachTacGia(string tacGia)
+        {
+            if (string.IsNullOrWhiteSpace(tacGia))
+            {
+                return string.Empty;
+            }
+
+            string[] parts = tacGia.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+            for (int i = 0; i < parts.Length; i++)
+            {
+                parts[i] = parts[i].Trim();
+            }
+
+            return string.Join(", ", parts);
+        }
+
+        private void TaiDanhSachSach()
+        {
+            try
+            {
+                DataTable danhSachSach = sachBUS.LayDanhSachSach();
+                if (!danhSachSach.Columns.Contains("MaSachHienThi"))
+                {
+                    danhSachSach.Columns.Add("MaSachHienThi", typeof(string));
+                }
+
+                foreach (DataRow row in danhSachSach.Rows)
+                {
+                    row["MaSachHienThi"] = Convert.ToInt32(row["MaSach"]).ToString("D5");
+                }
+
+                danhSachSach.Columns["MaSachHienThi"].SetOrdinal(0);
+                dgvSach.DataSource = danhSachSach;
+
+                if (dgvSach.Columns.Count > 0)
+                {
+                    dgvSach.Columns["MaSachHienThi"].HeaderText = "Mã sách";
+                    dgvSach.Columns["MaSach"].Visible = false;
+                    dgvSach.Columns["TenSach"].HeaderText = "Tên sách";
+                    dgvSach.Columns["TenTheLoai"].HeaderText = "Thể loại";
+                    dgvSach.Columns["TenTG"].HeaderText = "Tác giả";
+                    dgvSach.Columns["NamXB"].HeaderText = "Năm XB";
+                    dgvSach.Columns["NhaXB"].HeaderText = "Nhà XB";
+                    dgvSach.Columns["NgayNhap"].HeaderText = "Ngày nhập";
+                    dgvSach.Columns["TriGia"].HeaderText = "Trị giá";
+                    dgvSach.Columns["SoLuongTon"].HeaderText = "Số lượng";
+                    dgvSach.Columns["TinhTrang"].Visible = false;
+
+                    dgvSach.Columns["TriGia"].DefaultCellStyle.Format = "N0";
+                    dgvSach.Columns["NgayNhap"].DefaultCellStyle.Format = "dd/MM/yyyy";
+
+                    dgvSach.Columns["MaSachHienThi"].FillWeight = 70;
+                    dgvSach.Columns["TenSach"].FillWeight = 190;
+                    dgvSach.Columns["TenTheLoai"].FillWeight = 75;
+                    dgvSach.Columns["TenTG"].FillWeight = 105;
+                    dgvSach.Columns["NamXB"].FillWeight = 75;
+                    dgvSach.Columns["NhaXB"].FillWeight = 140;
+                    dgvSach.Columns["NgayNhap"].FillWeight = 95;
+                    dgvSach.Columns["TriGia"].FillWeight = 90;
+                    dgvSach.Columns["SoLuongTon"].FillWeight = 105;
+                }
+
+                dgvSach.ClearSelection();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Không thể tải danh sách sách.\nChi tiết: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+    }
+}
