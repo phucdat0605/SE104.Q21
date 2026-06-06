@@ -34,7 +34,7 @@
 | 2 | **23520245** | **Nguyễn Minh Hùng** | Thành viên | [@Art3m1sHun](https://github.com/Art3m1sHun)| 232520568@gm.uit.edu.vn |
 | 3 | **23520845** | **Lê Xuân Song Lĩnh**| Thành viên | [@Linh5126](https://github.com/Linh5126)| 23520845@gm.uit.edu.vn |
 | 4 | **23520253**|**Ngô Hữu Đạt** | Thành viên |[@Ngo-Dat](https://github.com/Ngo-Dat) | 23520253@gm.uit.edu.vn |
-| 5 | | | Thành viên | | @gm.uit.edu.vn |
+| 5 |**23521311** | **Thái Công Anh Quốc**| Thành viên | [@anhquoc2105](https://github.com/anhquoc2105)| 23521311@gm.uit.edu.vn |
 
 ---
 
