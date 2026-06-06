@@ -60,6 +60,9 @@
 
 ##  HÌNH ẢNH MINH HỌA
 
-<p align="center">
-  <img src="https://via.placeholder.com/800x450.png?text=Giao+dien+phan+mem+chua+cap+nhat" alt="Giao diện phần mềm" width="800">
-</p>
+<img width="542" height="408" alt="image" src="https://github.com/user-attachments/assets/07e20c9f-22ac-4d3c-87d4-5502e19b01bf" />
+<img width="1146" height="651" alt="image" src="https://github.com/user-attachments/assets/80a849c7-f023-44db-877a-27d887e07d4f" />
+<img width="1145" height="757" alt="image" src="https://github.com/user-attachments/assets/c8f343ad-63e9-4fb8-bc07-77fe71c7e5b0" />
+
+
+
